@@ -1,0 +1,146 @@
+// TiendaDemo - Pipeline de Calidad y Pruebas de Software (semanas 8 y 9).
+// Usar "Pipeline script from SCM" o pegar este contenido en un Pipeline script.
+// PROJECT_DIR vacio = workspace (SCM); en job local indicar ruta Windows absoluta.
+
+def qaRunPython(String arguments) {
+    String projectPath = params.PROJECT_DIR?.trim() ?: env.WORKSPACE
+    dir(projectPath) {
+        if (isUnix()) {
+            sh "python3 ${arguments}"
+        } else {
+            withEnv(["QA_PYTHON_EXE=${params.PYTHON_EXE}"]) {
+                bat """@echo off
+chcp 65001 >nul
+set "PYTHONIOENCODING=utf-8"
+"%QA_PYTHON_EXE%" ${arguments}
+"""
+            }
+        }
+    }
+}
+
+pipeline {
+    agent any
+    options { timestamps() }
+
+    parameters {
+        string(name: 'PROJECT_DIR', defaultValue: '', description: 'Ruta local del proyecto; dejar vacia cuando Jenkins obtiene el repo por SCM')
+        string(name: 'PYTHON_EXE', defaultValue: 'python', description: 'Windows: python o ruta completa a python.exe accesible para Jenkins')
+        string(name: 'K6_EXE', defaultValue: 'k6', description: 'k6 en PATH o ruta completa a k6.exe')
+        booleanParam(name: 'RUN_K6', defaultValue: true, description: 'Ejecutar 3 smoke de rendimiento y 10 controles HTTP de seguridad')
+        booleanParam(name: 'RUN_FULL_PERFORMANCE', defaultValue: false, description: 'Ejecutar R01-R10 completos, incluido R09 de 30 minutos')
+        booleanParam(name: 'RUN_STRESS', defaultValue: false, description: 'Ejecutar E01-E10 (opt-in: carga intensiva)')
+        booleanParam(name: 'RUN_UI_SECURITY', defaultValue: true, description: 'Probar posible inyeccion HTML en el buscador (puede fallar por defecto real)')
+    }
+
+    stages {
+        stage('01 - Preparar e instalar dependencias') {
+            steps {
+                script {
+                    qaRunPython('-m scripts.clean_reports')
+                    qaRunPython('-m pip install -r requirements.txt')
+                }
+            }
+        }
+
+        stage('02 - Unittest heredados TC01-TC50') {
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    script { qaRunPython('-m xmlrunner discover -s tests -o reports/unittest') }
+                }
+            }
+        }
+
+        stage('03 - Aceptacion Behave heredada') {
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    script { qaRunPython('-m behave features --junit --junit-directory reports/behave') }
+                }
+            }
+        }
+
+        stage('04 - Semana 8: Selenium funcional') {
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    script { qaRunPython('-m xmlrunner discover -s quality/week8 -p test_semana8.py -o reports/semana8') }
+                }
+            }
+        }
+
+        stage('05 - Semana 9: funcional y limites') {
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    script { qaRunPython('-m xmlrunner discover -s quality/week9 -p test_funcionales.py -o reports/semana9') }
+                }
+            }
+        }
+
+        stage('06 - Semana 9: seguridad HTTP') {
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    script { qaRunPython('-m xmlrunner discover -s quality/week9 -p test_http_seguridad.py -o reports/seguridad') }
+                }
+            }
+        }
+
+        stage('06b - Validar publicacion JUnit k6') {
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    script { qaRunPython('-m xmlrunner discover -s quality/week9 -p test_exportador_k6.py -o reports/exportador') }
+                }
+            }
+        }
+
+        stage('07 - Semana 9: seguridad DOM') {
+            when { expression { return params.RUN_UI_SECURITY } }
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    script { qaRunPython('-m xmlrunner discover -s quality/week9 -p test_seguridad_ui.py -o reports/seguridad') }
+                }
+            }
+        }
+
+        stage('08 - k6: rendimiento') {
+            when { expression { return params.RUN_K6 } }
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    script {
+                        String cases = params.RUN_FULL_PERFORMANCE ? 'all' : '1,2,3'
+                        String smoke = params.RUN_FULL_PERFORMANCE ? '' : ' --smoke'
+                        qaRunPython("-m scripts.run_k6_suite --group rendimiento --cases ${cases} --k6 \"${params.K6_EXE}\"${smoke}")
+                    }
+                }
+            }
+        }
+
+        stage('09 - k6: seguridad') {
+            when { expression { return params.RUN_K6 } }
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    script { qaRunPython("-m scripts.run_k6_suite --group seguridad --cases all --k6 \"${params.K6_EXE}\"") }
+                }
+            }
+        }
+
+        stage('10 - k6: estres (solo con aprobacion)') {
+            when { expression { return params.RUN_K6 && params.RUN_STRESS } }
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    script { qaRunPython("-m scripts.run_k6_suite --group estres --cases all --k6 \"${params.K6_EXE}\"") }
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            script {
+                String projectPath = params.PROJECT_DIR?.trim() ?: env.WORKSPACE
+                dir(projectPath) {
+                    junit testResults: 'reports/**/*.xml', allowEmptyResults: true
+                    archiveArtifacts artifacts: 'reports/**', allowEmptyArchive: true
+                }
+            }
+        }
+    }
+}

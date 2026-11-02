@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testcase name="F01 Inicio HTML 200 y cabeceras" time="0.033131" classname="test"/>
+	<testcase name="F02 CSS disponible" time="0.003328" classname="test"/>
+	<testcase name="F03 JS disponible" time="0.002610" classname="test"/>
+	<testcase name="F04 Perfil y campos completos" time="0.002674" classname="test"/>
+	<testcase name="F05 Cuatro cursos" time="0.001792" classname="test"/>
+	<testcase name="F06 Notas y estructura académica" time="0.001449" classname="test"/>
+	<testcase name="F07 Bandeja inicial vacía" time="0.002302" classname="test"/>
+	<testcase name="F08 POST válido 201 y metadatos" time="0.006051" classname="test"/>
+	<testcase name="F09 Mensaje visible en bandeja" time="0.006124" classname="test"/>
+	<testcase name="F10 Asunto mínimo 3" time="0.003052" classname="test"/>
+	<testcase name="F11 Asunto máximo 100" time="0.001293" classname="test"/>
+	<testcase name="F12 Mensaje mínimo 5" time="0.001498" classname="test"/>
+	<testcase name="F13 Mensaje máximo 1000" time="0.001150" classname="test"/>
+	<testcase name="F14 Recortar espacios extremos" time="0.001474" classname="test"/>
+	<testcase name="F15 Curso inexistente 400 sin guardar" time="0.003488" classname="test"/>
+	<testcase name="F16 Asunto demasiado corto" time="0.001797" classname="test"/>
+	<testcase name="F17 Asunto demasiado largo" time="0.002453" classname="test"/>
+	<testcase name="F18 Mensaje demasiado corto" time="0.001254" classname="test"/>
+	<testcase name="F19 Mensaje demasiado largo" time="0.001419" classname="test"/>
+	<testcase name="F20 Campos obligatorios vacíos" time="0.001362" classname="test"/>
+	<testcase name="F21 JSON malformado sin caída" time="0.002223" classname="test"/>
+	<testcase name="F22 Más de 16 KiB 413" time="0.001341" classname="test"/>
+	<testcase name="F23 Traversal codificado 403" time="0.001032" classname="test"/>
+	<testcase name="F24 Codificación URL inválida 400" time="0.000992" classname="test"/>
+	<testcase name="F25 Ruta inexistente y método no admitido" time="0.003111" classname="test"/>
+	<!-- tests 25 -->
+	<!-- suites 0 -->
+	<!-- pass 25 -->
+	<!-- fail 0 -->
+	<!-- cancelled 0 -->
+	<!-- skipped 0 -->
+	<!-- todo 0 -->
+	<!-- duration_ms 145.211601 -->
+</testsuites>

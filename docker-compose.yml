@@ -1,0 +1,65 @@
+name: calidad-semana11
+services:
+  tienda-demo:
+    build:
+      context: .
+      dockerfile: docker/tienda.Dockerfile
+    ports:
+      - "127.0.0.1:8008:8008"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8008/',timeout=2)"]
+      interval: 5s
+      timeout: 3s
+      retries: 18
+  aula-nova:
+    build:
+      context: .
+      dockerfile: docker/aula.Dockerfile
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - ./reports:/reports
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 5s
+      timeout: 3s
+      retries: 18
+  selenium:
+    image: selenium/standalone-chrome:4.27.0
+    shm_size: 2gb
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:4444/status"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+  selenium-tests:
+    build:
+      context: .
+      dockerfile: docker/selenium.Dockerfile
+    depends_on:
+      tienda-demo: {condition: service_healthy}
+      selenium: {condition: service_healthy}
+    volumes:
+      - ./reports:/reports
+    profiles: ["tests"]
+  playwright-tests:
+    build:
+      context: .
+      dockerfile: docker/playwright.Dockerfile
+    depends_on:
+      tienda-demo: {condition: service_healthy}
+      aula-nova: {condition: service_healthy}
+    volumes:
+      - ./reports:/reports
+    profiles: ["tests"]
+  k6:
+    image: grafana/k6:0.54.0
+    volumes:
+      - ./tests/k6:/scripts:ro
+      - ./reports:/reports
+    depends_on:
+      tienda-demo: {condition: service_healthy}
+      aula-nova: {condition: service_healthy}
+    profiles: ["tests"]

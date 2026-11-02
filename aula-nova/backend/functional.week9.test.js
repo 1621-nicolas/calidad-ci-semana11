@@ -1,0 +1,37 @@
+// F01-F25 de Aula Nova: automatización funcional de la semana 9.
+const {test,before,after}=require('node:test');
+const a=require('node:assert/strict');
+const {createServer}=require('./server');
+let server,BASE;
+before(async()=>{server=createServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));BASE=`http://127.0.0.1:${server.address().port}`;});
+after(async()=>{await new Promise(r=>server.close(r));});
+const get=(path)=>fetch(BASE+path);
+const post=(data)=>fetch(BASE+'/api/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:typeof data==='string'?data:JSON.stringify(data)});
+const valid=(updates={})=>({courseId:'calc-201',subject:'Consulta de laboratorio',body:'¿Puede ayudarme con una tarea?',...updates});
+const expectStatus=async(r,status)=>{a.equal(r.status,status);return r;};
+
+test('F01 Inicio HTML 200 y cabeceras',async()=>{const r=await expectStatus(await get('/'),200);a.match(await r.text(),/Aula Nova/);a.equal(r.headers.get('x-frame-options'),'DENY');});
+test('F02 CSS disponible',async()=>{a.equal((await get('/styles.css')).status,200);});
+test('F03 JS disponible',async()=>{a.equal((await get('/app.js')).status,200);});
+test('F04 Perfil y campos completos',async()=>{const x=(await(await get('/api/student')).json()).student;for(const f of ['firstName','lastName','code','email','program','faculty','cycle'])a.ok(x[f]);});
+test('F05 Cuatro cursos',async()=>{const x=await(await get('/api/courses')).json();a.equal(x.courses.length,4);});
+test('F06 Notas y estructura académica',async()=>{const x=await(await get('/api/courses')).json();for(const c of x.courses){a.ok(c.code&&c.teacher);a.ok(Object.hasOwn(c,'grades'));}});
+test('F07 Bandeja inicial vacía',async()=>{const x=await(await get('/api/messages')).json();a.equal(x.messages.length,0);});
+test('F08 POST válido 201 y metadatos',async()=>{const r=await expectStatus(await post(valid()),201);const x=(await r.json()).message;a.ok(x.id&&x.createdAt&&x.teacher);});
+test('F09 Mensaje visible en bandeja',async()=>{const x='MarcaF09-'+Date.now();await expectStatus(await post(valid({subject:x})),201);const m=(await(await get('/api/messages')).json()).messages;a.ok(m.some(y=>y.subject===x));});
+test('F10 Asunto mínimo 3',async()=>{await expectStatus(await post(valid({subject:'abc'})),201);});
+test('F11 Asunto máximo 100',async()=>{await expectStatus(await post(valid({subject:'a'.repeat(100)})),201);});
+test('F12 Mensaje mínimo 5',async()=>{await expectStatus(await post(valid({body:'abcde'})),201);});
+test('F13 Mensaje máximo 1000',async()=>{await expectStatus(await post(valid({body:'a'.repeat(1000)})),201);});
+test('F14 Recortar espacios extremos',async()=>{const m=(await(await post(valid({subject:'  Consulta  ',body:'  texto de prueba  '}))).json()).message;a.equal(m.subject,'Consulta');a.equal(m.body,'texto de prueba');});
+test('F15 Curso inexistente 400 sin guardar',async()=>{const before=(await(await get('/api/messages')).json()).messages.length;await expectStatus(await post(valid({courseId:'fantasma'})),400);const now=(await(await get('/api/messages')).json()).messages.length;a.equal(now,before);});
+test('F16 Asunto demasiado corto',async()=>{await expectStatus(await post(valid({subject:'ab'})),400);});
+test('F17 Asunto demasiado largo',async()=>{await expectStatus(await post(valid({subject:'a'.repeat(101)})),400);});
+test('F18 Mensaje demasiado corto',async()=>{await expectStatus(await post(valid({body:'abcd'})),400);});
+test('F19 Mensaje demasiado largo',async()=>{await expectStatus(await post(valid({body:'a'.repeat(1001)})),400);});
+test('F20 Campos obligatorios vacíos',async()=>{await expectStatus(await post({courseId:'',subject:'',body:''}),400);});
+test('F21 JSON malformado sin caída',async()=>{await expectStatus(await post('{'),400);await expectStatus(await get('/api/courses'),200);});
+test('F22 Más de 16 KiB 413',async()=>{await expectStatus(await post('x'.repeat(17000)),413);});
+test('F23 Traversal codificado 403',async()=>{await expectStatus(await get('/..%2Fbackend%2Fserver.js'),403);});
+test('F24 Codificación URL inválida 400',async()=>{await expectStatus(await get('/%ZZ'),400);});
+test('F25 Ruta inexistente y método no admitido',async()=>{await expectStatus(await get('/api/no-existe'),404);const r=await fetch(BASE+'/api/messages',{method:'PUT'});a.equal(r.status,404);});

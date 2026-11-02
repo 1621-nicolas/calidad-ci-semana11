@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TiendaDemo — Carrito de Compras</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       CABECERA / NAVBAR
+  ══════════════════════════════════════════════ -->
+  <header class="cabecera" id="cabecera">
+    <div class="cabecera-inner">
+
+      <div class="logo" id="logo">
+        Tienda<span>Demo</span>
+      </div>
+
+      <div class="busqueda-wrap">
+        <input
+          type="text"
+          id="buscador"
+          placeholder="Buscar productos..."
+          aria-label="Buscar productos"
+          autocomplete="off"
+        >
+        <button class="btn-buscar" id="btn-buscar" aria-label="Buscar">
+          Buscar
+        </button>
+      </div>
+
+      <button class="carrito-btn" id="btn-abrir-carrito" aria-label="Ver carrito de compras">
+        🛒 Carrito
+        <span id="contador-carrito" aria-live="polite" aria-label="Artículos en el carrito">0</span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════
+       TOAST DE NOTIFICACIONES
+  ══════════════════════════════════════════════ -->
+  <div id="toast" role="alert" aria-live="assertive"></div>
+
+  <!-- ══════════════════════════════════════════════
+       CONTENIDO PRINCIPAL
+  ══════════════════════════════════════════════ -->
+  <main class="contenido" id="contenido-principal">
+
+    <!-- ── VISTA: CATÁLOGO ───────────────────────── -->
+    <section class="vista activa" id="vista-catalogo" aria-label="Catálogo de productos">
+
+      <div class="catalogo-header">
+        <h2 id="titulo-catalogo">Todos los productos</h2>
+        <select id="filtro-categoria" class="filtro-select" aria-label="Filtrar por categoría">
+          <option value="todas">Todas las categorías</option>
+          <option value="Electrónica">Electrónica</option>
+          <option value="Periféricos">Periféricos</option>
+          <option value="Audio">Audio</option>
+          <option value="Almacenamiento">Almacenamiento</option>
+          <option value="Accesorios">Accesorios</option>
+        </select>
+      </div>
+
+      <div class="grid-productos" id="grid-productos" aria-label="Lista de productos">
+        <!-- Generado por carrito.js → renderCatalogo() -->
+      </div>
+
+    </section>
+
+    <!-- ── VISTA: CARRITO ────────────────────────── -->
+    <section class="vista" id="vista-carrito" aria-label="Carrito de compras">
+
+      <div class="breadcrumb" id="breadcrumb-carrito">
+        <span
+          role="button"
+          tabindex="0"
+          onclick="mostrarVista('catalogo')"
+          onkeydown="if(event.key==='Enter') mostrarVista('catalogo')"
+          style="cursor:pointer;color:var(--azul)"
+        >Tienda</span>
+        <span class="sep">›</span>
+        <span class="activo">Carrito</span>
+      </div>
+
+      <div id="carrito-contenido">
+        <!-- Generado por carrito.js → renderCarrito() -->
+      </div>
+
+    </section>
+
+    <!-- ── VISTA: CHECKOUT ───────────────────────── -->
+    <section class="vista" id="vista-checkout" aria-label="Formulario de pago">
+
+      <div class="breadcrumb" id="breadcrumb-checkout">
+        <span
+          role="button"
+          tabindex="0"
+          onclick="mostrarVista('catalogo')"
+          onkeydown="if(event.key==='Enter') mostrarVista('catalogo')"
+          style="cursor:pointer;color:var(--azul)"
+        >Tienda</span>
+        <span class="sep">›</span>
+        <span
+          role="button"
+          tabindex="0"
+          onclick="renderCarrito()"
+          onkeydown="if(event.key==='Enter') renderCarrito()"
+          style="cursor:pointer;color:var(--azul)"
+        >Carrito</span>
+        <span class="sep">›</span>
+        <span class="activo">Pago</span>
+      </div>
+
+      <div id="checkout-contenido">
+        <!-- Generado por carrito.js → renderCheckout() -->
+      </div>
+
+    </section>
+
+    <!-- ── VISTA: CONFIRMACIÓN ───────────────────── -->
+    <section class="vista" id="vista-confirmacion" aria-label="Confirmación de compra">
+
+      <div id="confirmacion-contenido">
+        <!-- Generado por carrito.js → renderConfirmacion() -->
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════
+       PIE DE PÁGINA
+  ══════════════════════════════════════════════ -->
+  <footer style="text-align:center;padding:2rem;font-size:12px;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:3rem">
+    TiendaDemo — Aplicación de prueba para el curso Calidad y Pruebas de Software
+  </footer>
+
+  <!-- ══════════════════════════════════════════════
+       JAVASCRIPT (al final del body)
+  ══════════════════════════════════════════════ -->
+  <script src="carrito.js"></script>
+
+</body>
+</html>

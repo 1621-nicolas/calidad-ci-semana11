@@ -1,0 +1,18 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+.pytest_cache/
+reports/
+test-results/
+playwright-report/
+*.log
+
+# Archivos locales y evidencias generadas
+reports/
+**/evidencias_previas/
+*.pem
+*.key

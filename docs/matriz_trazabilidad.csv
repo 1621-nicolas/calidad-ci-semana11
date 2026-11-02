@@ -1,0 +1,234 @@
+case_id,suite,requirement,description,tool,expected,execution,priority
+SEL-TC01,Selenium 41,TIENDA-TC01,agregar producto al carrito,Selenium,El resultado debe coincidir con el criterio de TC01,CI/Docker,Alta
+PW-TC01,Playwright 41,TIENDA-TC01,agregar producto al carrito,Playwright,El resultado debe coincidir con el criterio de TC01,CI/Docker,Alta
+UAT-TC01,UAT Behave,TIENDA-TC01,agregar producto al carrito,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC02,Selenium 41,TIENDA-TC02,agregar varios productos diferentes,Selenium,El resultado debe coincidir con el criterio de TC02,CI/Docker,Alta
+PW-TC02,Playwright 41,TIENDA-TC02,agregar varios productos diferentes,Playwright,El resultado debe coincidir con el criterio de TC02,CI/Docker,Alta
+UAT-TC02,UAT Behave,TIENDA-TC02,agregar varios productos diferentes,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC03,Selenium 41,TIENDA-TC03,agregar el mismo producto dos veces,Selenium,El resultado debe coincidir con el criterio de TC03,CI/Docker,Alta
+PW-TC03,Playwright 41,TIENDA-TC03,agregar el mismo producto dos veces,Playwright,El resultado debe coincidir con el criterio de TC03,CI/Docker,Alta
+UAT-TC03,UAT Behave,TIENDA-TC03,agregar el mismo producto dos veces,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC04,Selenium 41,TIENDA-TC04,contador aumenta correctamente,Selenium,El resultado debe coincidir con el criterio de TC04,CI/Docker,Alta
+PW-TC04,Playwright 41,TIENDA-TC04,contador aumenta correctamente,Playwright,El resultado debe coincidir con el criterio de TC04,CI/Docker,Alta
+UAT-TC04,UAT Behave,TIENDA-TC04,contador aumenta correctamente,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC05,Selenium 41,TIENDA-TC05,producto visible en carrito,Selenium,El resultado debe coincidir con el criterio de TC05,CI/Docker,Alta
+PW-TC05,Playwright 41,TIENDA-TC05,producto visible en carrito,Playwright,El resultado debe coincidir con el criterio de TC05,CI/Docker,Alta
+UAT-TC05,UAT Behave,TIENDA-TC05,producto visible en carrito,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC06,Selenium 41,TIENDA-TC06,aumentar cantidad de producto,Selenium,El resultado debe coincidir con el criterio de TC06,CI/Docker,Alta
+PW-TC06,Playwright 41,TIENDA-TC06,aumentar cantidad de producto,Playwright,El resultado debe coincidir con el criterio de TC06,CI/Docker,Alta
+UAT-TC06,UAT Behave,TIENDA-TC06,aumentar cantidad de producto,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC07,Selenium 41,TIENDA-TC07,disminuir cantidad de producto,Selenium,El resultado debe coincidir con el criterio de TC07,CI/Docker,Alta
+PW-TC07,Playwright 41,TIENDA-TC07,disminuir cantidad de producto,Playwright,El resultado debe coincidir con el criterio de TC07,CI/Docker,Alta
+UAT-TC07,UAT Behave,TIENDA-TC07,disminuir cantidad de producto,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC08,Selenium 41,TIENDA-TC08,cantidad cero elimina producto,Selenium,El resultado debe coincidir con el criterio de TC08,CI/Docker,Alta
+PW-TC08,Playwright 41,TIENDA-TC08,cantidad cero elimina producto,Playwright,El resultado debe coincidir con el criterio de TC08,CI/Docker,Alta
+UAT-TC08,UAT Behave,TIENDA-TC08,cantidad cero elimina producto,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC09,Selenium 41,TIENDA-TC09,cantidad negativa no baja de cero,Selenium,El resultado debe coincidir con el criterio de TC09,CI/Docker,Alta
+PW-TC09,Playwright 41,TIENDA-TC09,cantidad negativa no baja de cero,Playwright,El resultado debe coincidir con el criterio de TC09,CI/Docker,Alta
+UAT-TC09,UAT Behave,TIENDA-TC09,cantidad negativa no baja de cero,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC10,Selenium 41,TIENDA-TC10,eliminar producto del carrito,Selenium,El resultado debe coincidir con el criterio de TC10,CI/Docker,Alta
+PW-TC10,Playwright 41,TIENDA-TC10,eliminar producto del carrito,Playwright,El resultado debe coincidir con el criterio de TC10,CI/Docker,Alta
+UAT-TC10,UAT Behave,TIENDA-TC10,eliminar producto del carrito,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC11,Selenium 41,TIENDA-TC11,eliminar ultimo producto deja carrito vacio,Selenium,El resultado debe coincidir con el criterio de TC11,CI/Docker,Alta
+PW-TC11,Playwright 41,TIENDA-TC11,eliminar ultimo producto deja carrito vacio,Playwright,El resultado debe coincidir con el criterio de TC11,CI/Docker,Alta
+UAT-TC11,UAT Behave,TIENDA-TC11,eliminar ultimo producto deja carrito vacio,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC12,Selenium 41,TIENDA-TC12,eliminar uno entre varios,Selenium,El resultado debe coincidir con el criterio de TC12,CI/Docker,Alta
+PW-TC12,Playwright 41,TIENDA-TC12,eliminar uno entre varios,Playwright,El resultado debe coincidir con el criterio de TC12,CI/Docker,Alta
+UAT-TC12,UAT Behave,TIENDA-TC12,eliminar uno entre varios,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC13,Selenium 41,TIENDA-TC13,subtotal se recalcula al eliminar,Selenium,El resultado debe coincidir con el criterio de TC13,CI/Docker,Alta
+PW-TC13,Playwright 41,TIENDA-TC13,subtotal se recalcula al eliminar,Playwright,El resultado debe coincidir con el criterio de TC13,CI/Docker,Alta
+UAT-TC13,UAT Behave,TIENDA-TC13,subtotal se recalcula al eliminar,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC14,Selenium 41,TIENDA-TC14,aplicar cupon valido,Selenium,El resultado debe coincidir con el criterio de TC14,CI/Docker,Alta
+PW-TC14,Playwright 41,TIENDA-TC14,aplicar cupon valido,Playwright,El resultado debe coincidir con el criterio de TC14,CI/Docker,Alta
+UAT-TC14,UAT Behave,TIENDA-TC14,aplicar cupon valido,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC15,Selenium 41,TIENDA-TC15,aplicar cupon invalido,Selenium,El resultado debe coincidir con el criterio de TC15,CI/Docker,Alta
+PW-TC15,Playwright 41,TIENDA-TC15,aplicar cupon invalido,Playwright,El resultado debe coincidir con el criterio de TC15,CI/Docker,Alta
+UAT-TC15,UAT Behave,TIENDA-TC15,aplicar cupon invalido,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC16,Selenium 41,TIENDA-TC16,aplicar cupon vacio,Selenium,El resultado debe coincidir con el criterio de TC16,CI/Docker,Alta
+PW-TC16,Playwright 41,TIENDA-TC16,aplicar cupon vacio,Playwright,El resultado debe coincidir con el criterio de TC16,CI/Docker,Alta
+UAT-TC16,UAT Behave,TIENDA-TC16,aplicar cupon vacio,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC17,Selenium 41,TIENDA-TC17,aplicar cupon repetido,Selenium,El resultado debe coincidir con el criterio de TC17,CI/Docker,Alta
+PW-TC17,Playwright 41,TIENDA-TC17,aplicar cupon repetido,Playwright,El resultado debe coincidir con el criterio de TC17,CI/Docker,Alta
+UAT-TC17,UAT Behave,TIENDA-TC17,aplicar cupon repetido,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC18,Selenium 41,TIENDA-TC18,total con descuento,Selenium,El resultado debe coincidir con el criterio de TC18,CI/Docker,Alta
+PW-TC18,Playwright 41,TIENDA-TC18,total con descuento,Playwright,El resultado debe coincidir con el criterio de TC18,CI/Docker,Alta
+UAT-TC18,UAT Behave,TIENDA-TC18,total con descuento,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC19,Selenium 41,TIENDA-TC19,total sin descuento,Selenium,El resultado debe coincidir con el criterio de TC19,CI/Docker,Alta
+PW-TC19,Playwright 41,TIENDA-TC19,total sin descuento,Playwright,El resultado debe coincidir con el criterio de TC19,CI/Docker,Alta
+UAT-TC19,UAT Behave,TIENDA-TC19,total sin descuento,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC20,Selenium 41,TIENDA-TC20,checkout bloqueado si carrito vacio,Selenium,El resultado debe coincidir con el criterio de TC20,CI/Docker,Alta
+PW-TC20,Playwright 41,TIENDA-TC20,checkout bloqueado si carrito vacio,Playwright,El resultado debe coincidir con el criterio de TC20,CI/Docker,Alta
+UAT-TC20,UAT Behave,TIENDA-TC20,checkout bloqueado si carrito vacio,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC21,Selenium 41,TIENDA-TC21,validar checkout con campos vacios,Selenium,El resultado debe coincidir con el criterio de TC21,CI/Docker,Alta
+PW-TC21,Playwright 41,TIENDA-TC21,validar checkout con campos vacios,Playwright,El resultado debe coincidir con el criterio de TC21,CI/Docker,Alta
+UAT-TC21,UAT Behave,TIENDA-TC21,validar checkout con campos vacios,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC22,Selenium 41,TIENDA-TC22,validar nombre obligatorio,Selenium,El resultado debe coincidir con el criterio de TC22,CI/Docker,Alta
+PW-TC22,Playwright 41,TIENDA-TC22,validar nombre obligatorio,Playwright,El resultado debe coincidir con el criterio de TC22,CI/Docker,Alta
+UAT-TC22,UAT Behave,TIENDA-TC22,validar nombre obligatorio,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC23,Selenium 41,TIENDA-TC23,validar apellido obligatorio,Selenium,El resultado debe coincidir con el criterio de TC23,CI/Docker,Alta
+PW-TC23,Playwright 41,TIENDA-TC23,validar apellido obligatorio,Playwright,El resultado debe coincidir con el criterio de TC23,CI/Docker,Alta
+UAT-TC23,UAT Behave,TIENDA-TC23,validar apellido obligatorio,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC24,Selenium 41,TIENDA-TC24,validar email obligatorio,Selenium,El resultado debe coincidir con el criterio de TC24,CI/Docker,Alta
+PW-TC24,Playwright 41,TIENDA-TC24,validar email obligatorio,Playwright,El resultado debe coincidir con el criterio de TC24,CI/Docker,Alta
+UAT-TC24,UAT Behave,TIENDA-TC24,validar email obligatorio,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC25,Selenium 41,TIENDA-TC25,validar email invalido,Selenium,El resultado debe coincidir con el criterio de TC25,CI/Docker,Alta
+PW-TC25,Playwright 41,TIENDA-TC25,validar email invalido,Playwright,El resultado debe coincidir con el criterio de TC25,CI/Docker,Alta
+UAT-TC25,UAT Behave,TIENDA-TC25,validar email invalido,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC26,Selenium 41,TIENDA-TC26,validar telefono obligatorio,Selenium,El resultado debe coincidir con el criterio de TC26,CI/Docker,Alta
+PW-TC26,Playwright 41,TIENDA-TC26,validar telefono obligatorio,Playwright,El resultado debe coincidir con el criterio de TC26,CI/Docker,Alta
+UAT-TC26,UAT Behave,TIENDA-TC26,validar telefono obligatorio,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC27,Selenium 41,TIENDA-TC27,validar direccion obligatoria,Selenium,El resultado debe coincidir con el criterio de TC27,CI/Docker,Alta
+PW-TC27,Playwright 41,TIENDA-TC27,validar direccion obligatoria,Playwright,El resultado debe coincidir con el criterio de TC27,CI/Docker,Alta
+UAT-TC27,UAT Behave,TIENDA-TC27,validar direccion obligatoria,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC28,Selenium 41,TIENDA-TC28,validar ciudad obligatoria,Selenium,El resultado debe coincidir con el criterio de TC28,CI/Docker,Alta
+PW-TC28,Playwright 41,TIENDA-TC28,validar ciudad obligatoria,Playwright,El resultado debe coincidir con el criterio de TC28,CI/Docker,Alta
+UAT-TC28,UAT Behave,TIENDA-TC28,validar ciudad obligatoria,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC29,Selenium 41,TIENDA-TC29,confirmar compra con datos validos,Selenium,El resultado debe coincidir con el criterio de TC29,CI/Docker,Alta
+PW-TC29,Playwright 41,TIENDA-TC29,confirmar compra con datos validos,Playwright,El resultado debe coincidir con el criterio de TC29,CI/Docker,Alta
+UAT-TC29,UAT Behave,TIENDA-TC29,confirmar compra con datos validos,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC30,Selenium 41,TIENDA-TC30,confirmar compra con varios productos,Selenium,El resultado debe coincidir con el criterio de TC30,CI/Docker,Alta
+PW-TC30,Playwright 41,TIENDA-TC30,confirmar compra con varios productos,Playwright,El resultado debe coincidir con el criterio de TC30,CI/Docker,Alta
+UAT-TC30,UAT Behave,TIENDA-TC30,confirmar compra con varios productos,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC31,Selenium 41,TIENDA-TC31,pantalla de confirmacion visible,Selenium,El resultado debe coincidir con el criterio de TC31,CI/Docker,Alta
+PW-TC31,Playwright 41,TIENDA-TC31,pantalla de confirmacion visible,Playwright,El resultado debe coincidir con el criterio de TC31,CI/Docker,Alta
+UAT-TC31,UAT Behave,TIENDA-TC31,pantalla de confirmacion visible,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC32,Selenium 41,TIENDA-TC32,uat agregar producto desde perspectiva usuario,Selenium,El resultado debe coincidir con el criterio de TC32,CI/Docker,Alta
+PW-TC32,Playwright 41,TIENDA-TC32,uat agregar producto desde perspectiva usuario,Playwright,El resultado debe coincidir con el criterio de TC32,CI/Docker,Alta
+UAT-TC32,UAT Behave,TIENDA-TC32,uat agregar producto desde perspectiva usuario,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC33,Selenium 41,TIENDA-TC33,uat ver carrito con producto agregado,Selenium,El resultado debe coincidir con el criterio de TC33,CI/Docker,Alta
+PW-TC33,Playwright 41,TIENDA-TC33,uat ver carrito con producto agregado,Playwright,El resultado debe coincidir con el criterio de TC33,CI/Docker,Alta
+UAT-TC33,UAT Behave,TIENDA-TC33,uat ver carrito con producto agregado,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC34,Selenium 41,TIENDA-TC34,uat aplicar cupon valido,Selenium,El resultado debe coincidir con el criterio de TC34,CI/Docker,Alta
+PW-TC34,Playwright 41,TIENDA-TC34,uat aplicar cupon valido,Playwright,El resultado debe coincidir con el criterio de TC34,CI/Docker,Alta
+UAT-TC34,UAT Behave,TIENDA-TC34,uat aplicar cupon valido,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC35,Selenium 41,TIENDA-TC35,uat completar checkout con datos normales,Selenium,El resultado debe coincidir con el criterio de TC35,CI/Docker,Alta
+PW-TC35,Playwright 41,TIENDA-TC35,uat completar checkout con datos normales,Playwright,El resultado debe coincidir con el criterio de TC35,CI/Docker,Alta
+UAT-TC35,UAT Behave,TIENDA-TC35,uat completar checkout con datos normales,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC36,Selenium 41,TIENDA-TC36,uat compra con datos incompletos,Selenium,El resultado debe coincidir con el criterio de TC36,CI/Docker,Alta
+PW-TC36,Playwright 41,TIENDA-TC36,uat compra con datos incompletos,Playwright,El resultado debe coincidir con el criterio de TC36,CI/Docker,Alta
+UAT-TC36,UAT Behave,TIENDA-TC36,uat compra con datos incompletos,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC37,Selenium 41,TIENDA-TC37,uat confirmar pedido final,Selenium,El resultado debe coincidir con el criterio de TC37,CI/Docker,Alta
+PW-TC37,Playwright 41,TIENDA-TC37,uat confirmar pedido final,Playwright,El resultado debe coincidir con el criterio de TC37,CI/Docker,Alta
+UAT-TC37,UAT Behave,TIENDA-TC37,uat confirmar pedido final,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC38,Selenium 41,TIENDA-TC38,uat comprar con mas de un articulo,Selenium,El resultado debe coincidir con el criterio de TC38,CI/Docker,Alta
+PW-TC38,Playwright 41,TIENDA-TC38,uat comprar con mas de un articulo,Playwright,El resultado debe coincidir con el criterio de TC38,CI/Docker,Alta
+UAT-TC38,UAT Behave,TIENDA-TC38,uat comprar con mas de un articulo,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC39,Selenium 41,TIENDA-TC39,uat intentar compra con carrito vacio,Selenium,El resultado debe coincidir con el criterio de TC39,CI/Docker,Alta
+PW-TC39,Playwright 41,TIENDA-TC39,uat intentar compra con carrito vacio,Playwright,El resultado debe coincidir con el criterio de TC39,CI/Docker,Alta
+UAT-TC39,UAT Behave,TIENDA-TC39,uat intentar compra con carrito vacio,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC40,Selenium 41,TIENDA-TC40,uat validar total final correcto,Selenium,El resultado debe coincidir con el criterio de TC40,CI/Docker,Alta
+PW-TC40,Playwright 41,TIENDA-TC40,uat validar total final correcto,Playwright,El resultado debe coincidir con el criterio de TC40,CI/Docker,Alta
+UAT-TC40,UAT Behave,TIENDA-TC40,uat validar total final correcto,Behave,Escenario de aceptación según features,CI/Docker,Media
+SEL-TC41,Selenium 41,TIENDA-TC41,uat flujo completo de compra,Selenium,El resultado debe coincidir con el criterio de TC41,CI/Docker,Alta
+PW-TC41,Playwright 41,TIENDA-TC41,uat flujo completo de compra,Playwright,El resultado debe coincidir con el criterio de TC41,CI/Docker,Alta
+UAT-TC41,UAT Behave,TIENDA-TC41,uat flujo completo de compra,Behave,Escenario de aceptación según features,CI/Docker,Media
+AULA-F01,Funcional Aula Nova,AULA-RF-01,Inicio HTML cabeceras,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F02,Funcional Aula Nova,AULA-RF-02,CSS,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F03,Funcional Aula Nova,AULA-RF-03,JS,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F04,Funcional Aula Nova,AULA-RF-04,Perfil,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F05,Funcional Aula Nova,AULA-RF-05,Cursos,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F06,Funcional Aula Nova,AULA-RF-06,Notas,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F07,Funcional Aula Nova,AULA-RF-07,Bandeja vacía,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F08,Funcional Aula Nova,AULA-RF-08,Enviar mensaje,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F09,Funcional Aula Nova,AULA-RF-09,Persistencia mensaje,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F10,Funcional Aula Nova,AULA-RF-10,Asunto mínimo,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F11,Funcional Aula Nova,AULA-RF-11,Asunto máximo,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F12,Funcional Aula Nova,AULA-RF-12,Mensaje mínimo,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F13,Funcional Aula Nova,AULA-RF-13,Mensaje máximo,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F14,Funcional Aula Nova,AULA-RF-14,Recortar espacios,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F15,Funcional Aula Nova,AULA-RF-15,Curso inválido,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F16,Funcional Aula Nova,AULA-RF-16,Asunto corto,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F17,Funcional Aula Nova,AULA-RF-17,Asunto largo,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F18,Funcional Aula Nova,AULA-RF-18,Mensaje corto,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F19,Funcional Aula Nova,AULA-RF-19,Mensaje largo,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F20,Funcional Aula Nova,AULA-RF-20,Campos vacíos,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F21,Funcional Aula Nova,AULA-RF-21,JSON inválido,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F22,Funcional Aula Nova,AULA-RF-22,Body >16KiB,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F23,Funcional Aula Nova,AULA-RF-23,Traversal,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F24,Funcional Aula Nova,AULA-RF-24,URL inválida,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-F25,Funcional Aula Nova,AULA-RF-25,Ruta y método inválidos,Node test,Status y estructura correctos según el caso,CI/Docker,Alta
+AULA-R01,k6 Rendimiento,AULA-RNF-R01,Escenario Rendimiento R01,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-R02,k6 Rendimiento,AULA-RNF-R02,Escenario Rendimiento R02,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-R03,k6 Rendimiento,AULA-RNF-R03,Escenario Rendimiento R03,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-R04,k6 Rendimiento,AULA-RNF-R04,Escenario Rendimiento R04,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-R05,k6 Rendimiento,AULA-RNF-R05,Escenario Rendimiento R05,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-R06,k6 Rendimiento,AULA-RNF-R06,Escenario Rendimiento R06,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-R07,k6 Rendimiento,AULA-RNF-R07,Escenario Rendimiento R07,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-R08,k6 Rendimiento,AULA-RNF-R08,Escenario Rendimiento R08,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-R09,k6 Rendimiento,AULA-RNF-R09,Escenario Rendimiento R09,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-R10,k6 Rendimiento,AULA-RNF-R10,Escenario Rendimiento R10,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-E01,k6 Estrés,AULA-RNF-E01,Escenario Estrés E01,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-E02,k6 Estrés,AULA-RNF-E02,Escenario Estrés E02,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-E03,k6 Estrés,AULA-RNF-E03,Escenario Estrés E03,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-E04,k6 Estrés,AULA-RNF-E04,Escenario Estrés E04,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-E05,k6 Estrés,AULA-RNF-E05,Escenario Estrés E05,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-E06,k6 Estrés,AULA-RNF-E06,Escenario Estrés E06,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-E07,k6 Estrés,AULA-RNF-E07,Escenario Estrés E07,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-E08,k6 Estrés,AULA-RNF-E08,Escenario Estrés E08,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-E09,k6 Estrés,AULA-RNF-E09,Escenario Estrés E09,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-E10,k6 Estrés,AULA-RNF-E10,Escenario Estrés E10,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-S01,k6 Seguridad,AULA-RNF-S01,Escenario Seguridad S01,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-S02,k6 Seguridad,AULA-RNF-S02,Escenario Seguridad S02,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-S03,k6 Seguridad,AULA-RNF-S03,Escenario Seguridad S03,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-S04,k6 Seguridad,AULA-RNF-S04,Escenario Seguridad S04,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-S05,k6 Seguridad,AULA-RNF-S05,Escenario Seguridad S05,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-S06,k6 Seguridad,AULA-RNF-S06,Escenario Seguridad S06,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-S07,k6 Seguridad,AULA-RNF-S07,Escenario Seguridad S07,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-S08,k6 Seguridad,AULA-RNF-S08,Escenario Seguridad S08,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-S09,k6 Seguridad,AULA-RNF-S09,Escenario Seguridad S09,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+AULA-S10,k6 Seguridad,AULA-RNF-S10,Escenario Seguridad S10,Grafana k6,Cumple umbrales y comprobaciones definidas en script y consigna,CI/Docker,Alta
+TIENDA-S08-01,Tienda Semana 8,TIENDA-S08,test s08 01 catalogo muestra productos,Selenium,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S08-02,Tienda Semana 8,TIENDA-S08,test s08 02 producto agregado incrementa contador,Selenium,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S08-03,Tienda Semana 8,TIENDA-S08,test s08 03 busqueda muestra producto esperado,Selenium,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S08-04,Tienda Semana 8,TIENDA-S08,test s08 04 producto sin stock no disponible,Selenium,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S08-05,Tienda Semana 8,TIENDA-S08,test s08 05 suma del carrito,Selenium,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S08-06,Tienda Semana 8,TIENDA-S08,test s08 06 descuento valido,Selenium,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S08-07,Tienda Semana 8,TIENDA-S08,test s08 07 carrito vacio,Selenium,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S08-08,Tienda Semana 8,TIENDA-S08,test s08 08 compra valida,Selenium,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S09-F01,Tienda Semana 9 Funcional,TIENDA-S09,test s09 f01 limite de stock,Selenium,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S09-F02,Tienda Semana 9 Funcional,TIENDA-S09,test s09 f02 busqueda inexistente,Selenium,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S09-F03,Tienda Semana 9 Funcional,TIENDA-S09,test s09 f03 multiples unidades actualizan total,Selenium,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S09-F04,Tienda Semana 9 Funcional,TIENDA-S09,test s09 f04 se puede regresar a catalogo,Selenium,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S09-F05,Tienda Semana 9 Funcional,TIENDA-S09,test s09 f05 cupon invalido no descuenta,Selenium,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S09-F06,Tienda Semana 9 Funcional,TIENDA-S09,test s09 f06 checkout valido finaliza,Selenium,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S09-S01,Tienda Seguridad,TIENDA-SEC,test s09 s01 inicio,HTTP unittest,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S09-S02,Tienda Seguridad,TIENDA-SEC,test s09 s02 archivos estaticos,HTTP unittest,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S09-S03,Tienda Seguridad,TIENDA-SEC,test s09 s03 bloqueo archivo privado,HTTP unittest,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S09-S04,Tienda Seguridad,TIENDA-SEC,test s09 s04 traversal,HTTP unittest,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S09-S05,Tienda Seguridad,TIENDA-SEC,test s09 s05 url malformada,HTTP unittest,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S09-S06,Tienda Seguridad,TIENDA-SEC,test s09 s06 post no permitido,HTTP unittest,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S09-S07,Tienda Seguridad,TIENDA-SEC,test s09 s07 cuerpo grande,HTTP unittest,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S09-S08,Tienda Seguridad,TIENDA-SEC,test s09 s08 metodo put,HTTP unittest,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S09-S09,Tienda Seguridad,TIENDA-SEC,test s09 s09 cabeceras,HTTP unittest,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S09-S10,Tienda Seguridad,TIENDA-SEC,test s09 s10 ruta inexistente,HTTP unittest,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-S09-S11,Tienda Seguridad,TIENDA-SEC,test s09 s11 busqueda no ejecuta html introducido,Selenium,Comprobación según criterio automatizado,CI/Docker,Alta
+TIENDA-R01,Tienda k6 Rendimiento,TIENDA-RNF-R01,Escenario tienda Rendimiento R01,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-R02,Tienda k6 Rendimiento,TIENDA-RNF-R02,Escenario tienda Rendimiento R02,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-R03,Tienda k6 Rendimiento,TIENDA-RNF-R03,Escenario tienda Rendimiento R03,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-R04,Tienda k6 Rendimiento,TIENDA-RNF-R04,Escenario tienda Rendimiento R04,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-R05,Tienda k6 Rendimiento,TIENDA-RNF-R05,Escenario tienda Rendimiento R05,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-R06,Tienda k6 Rendimiento,TIENDA-RNF-R06,Escenario tienda Rendimiento R06,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-R07,Tienda k6 Rendimiento,TIENDA-RNF-R07,Escenario tienda Rendimiento R07,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-R08,Tienda k6 Rendimiento,TIENDA-RNF-R08,Escenario tienda Rendimiento R08,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-R09,Tienda k6 Rendimiento,TIENDA-RNF-R09,Escenario tienda Rendimiento R09,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-R10,Tienda k6 Rendimiento,TIENDA-RNF-R10,Escenario tienda Rendimiento R10,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-E01,Tienda k6 Estrés,TIENDA-RNF-E01,Escenario tienda Estrés E01,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-E02,Tienda k6 Estrés,TIENDA-RNF-E02,Escenario tienda Estrés E02,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-E03,Tienda k6 Estrés,TIENDA-RNF-E03,Escenario tienda Estrés E03,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-E04,Tienda k6 Estrés,TIENDA-RNF-E04,Escenario tienda Estrés E04,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-E05,Tienda k6 Estrés,TIENDA-RNF-E05,Escenario tienda Estrés E05,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-E06,Tienda k6 Estrés,TIENDA-RNF-E06,Escenario tienda Estrés E06,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-E07,Tienda k6 Estrés,TIENDA-RNF-E07,Escenario tienda Estrés E07,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-E08,Tienda k6 Estrés,TIENDA-RNF-E08,Escenario tienda Estrés E08,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-E09,Tienda k6 Estrés,TIENDA-RNF-E09,Escenario tienda Estrés E09,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-E10,Tienda k6 Estrés,TIENDA-RNF-E10,Escenario tienda Estrés E10,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-S01,Tienda k6 Seguridad,TIENDA-RNF-S01,Escenario tienda Seguridad S01,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-S02,Tienda k6 Seguridad,TIENDA-RNF-S02,Escenario tienda Seguridad S02,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-S03,Tienda k6 Seguridad,TIENDA-RNF-S03,Escenario tienda Seguridad S03,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-S04,Tienda k6 Seguridad,TIENDA-RNF-S04,Escenario tienda Seguridad S04,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-S05,Tienda k6 Seguridad,TIENDA-RNF-S05,Escenario tienda Seguridad S05,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-S06,Tienda k6 Seguridad,TIENDA-RNF-S06,Escenario tienda Seguridad S06,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-S07,Tienda k6 Seguridad,TIENDA-RNF-S07,Escenario tienda Seguridad S07,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-S08,Tienda k6 Seguridad,TIENDA-RNF-S08,Escenario tienda Seguridad S08,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-S09,Tienda k6 Seguridad,TIENDA-RNF-S09,Escenario tienda Seguridad S09,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta
+TIENDA-S10,Tienda k6 Seguridad,TIENDA-RNF-S10,Escenario tienda Seguridad S10,Grafana k6,Criterio HTTP y umbrales del escenario de TiendaDemo,CI/Docker,Alta

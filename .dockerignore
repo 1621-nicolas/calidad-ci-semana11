@@ -1,0 +1,10 @@
+.git
+.env
+reports
+**/__pycache__
+**/.venv
+**/node_modules
+**/.pytest_cache
+**/playwright-report
+**/test-results
+**/.DS_Store

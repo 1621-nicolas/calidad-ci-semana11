@@ -1,0 +1,31 @@
+# OPCIONAL, SOLO LABORATORIO AISLADO: la imagen TestLink 1.9.20 usa sistema operativo antiguo.
+# Preferir una instalación TestLink existente y actualizada en producción.
+services:
+  testlink-db:
+    image: mariadb:10.11
+    profiles: [testlink]
+    environment:
+      MARIADB_DATABASE: testlink
+      MARIADB_USER: testlink
+      MARIADB_PASSWORD: ${TESTLINK_DB_PASSWORD:?Coloca TESTLINK_DB_PASSWORD en .env}
+      MARIADB_ROOT_PASSWORD: ${TESTLINK_DB_ROOT_PASSWORD:?Coloca TESTLINK_DB_ROOT_PASSWORD en .env}
+    volumes:
+      - testlink-db:/var/lib/mysql
+  testlink:
+    image: ganex/bitnami-testlink:1.9.20-debian-10-r676
+    profiles: [testlink]
+    depends_on: [testlink-db]
+    ports:
+      - "127.0.0.1:8090:8080"
+    environment:
+      TESTLINK_DATABASE_HOST: testlink-db
+      TESTLINK_DATABASE_NAME: testlink
+      TESTLINK_DATABASE_USER: testlink
+      TESTLINK_DATABASE_PASSWORD: ${TESTLINK_DB_PASSWORD:?Coloca TESTLINK_DB_PASSWORD en .env}
+      TESTLINK_USERNAME: ${TESTLINK_ADMIN_USER:-admin}
+      TESTLINK_PASSWORD: ${TESTLINK_ADMIN_PASSWORD:?Coloca TESTLINK_ADMIN_PASSWORD en .env}
+    volumes:
+      - testlink-data:/bitnami/testlink
+volumes:
+  testlink-db:
+  testlink-data:

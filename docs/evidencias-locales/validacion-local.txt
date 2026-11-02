@@ -1,0 +1,8 @@
+Fecha de verificación UTC: 2026-11-01T03:57:05.017685+00:00
+Aula Nova Node original: 6 subpruebas (archivo aula-unit-real.xml), 0 fallos.
+Aula Nova funcional semana9: 25 casos (archivo aula-functional-25-real.xml), 0 fallos.
+Python CI: py_compile correcto.
+Scripts k6: node --check correcto.
+Docker disponible en entorno de creación: False.
+Chromium UI: intento bloqueado por el navegador del entorno (ERR_BLOCKED_BY_ADMINISTRATOR); NO es un fallo confirmado de TiendaDemo.
+Jenkins, GitHub Actions y TestLink no se ejecutaron conectados en esta sesión.

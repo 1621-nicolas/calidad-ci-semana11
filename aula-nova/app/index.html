@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <meta name="description" content="Aula virtual universitaria: cursos, calificaciones y comunicación con tus profesores.">
+    <title>Aula Nova | Portal universitario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#inicio" aria-label="Aula Nova, inicio">
+          <span class="brand-mark" aria-hidden="true">a<span>.</span></span>
+          <span class="brand-name">aula<span>nova</span></span>
+        </a>
+        <div class="workspace-label">MENÚ PRINCIPAL</div>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a class="nav-link active" href="#inicio" data-view="inicio"><span class="nav-icon">⌂</span>Inicio</a>
+          <a class="nav-link" href="#cursos" data-view="cursos"><span class="nav-icon">▦</span>Mis cursos<span class="nav-count">4</span></a>
+          <a class="nav-link" href="#notas" data-view="notas"><span class="nav-icon">▤</span>Calificaciones</a>
+          <a class="nav-link" href="#mensajes" data-view="mensajes"><span class="nav-icon">✉</span>Mensajes<span class="notification-dot"></span></a>
+        </nav>
+        <div class="workspace-label secondary-label">TU ESPACIO</div>
+        <nav class="main-nav" aria-label="Cuenta">
+          <a class="nav-link" href="#perfil" data-view="perfil"><span class="nav-icon">♙</span>Mi perfil</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="help-card">
+            <div class="help-icon">✦</div>
+            <strong>¿Necesitas ayuda?</strong>
+            <p>Estamos aquí para acompañarte.</p>
+            <a href="mailto:soporte@aulanova.edu">Contactar soporte <span>↗</span></a>
+          </div>
+          <div class="sidebar-user">
+            <div class="avatar avatar-small">MG</div>
+            <div class="sidebar-user-copy"><strong id="sidebar-name">María García</strong><span>Estudiante</span></div>
+            <span class="user-menu" aria-hidden="true">···</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="icon-button mobile-menu" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+          <div class="breadcrumb"><span>Espacio académico</span><span class="breadcrumb-slash">/</span><strong id="breadcrumb-current">Inicio</strong></div>
+          <div class="topbar-actions">
+            <span class="semester-pill"><span class="status-indicator"></span> Ciclo 2026-II</span>
+            <button class="icon-button notification-button" aria-label="Notificaciones">♧<i></i></button>
+            <div class="topbar-divider"></div>
+            <button class="profile-trigger" id="profile-shortcut">
+              <span class="avatar avatar-small">MG</span>
+              <span class="profile-trigger-copy"><strong>María García</strong><span>Estudiante</span></span>
+              <span class="chevron">⌄</span>
+            </button>
+          </div>
+        </header>
+
+        <div class="page-content">
+          <section class="view-panel" id="view-inicio">
+            <div class="welcome-row">
+              <div>
+                <div class="eyebrow"><span class="eyebrow-line"></span> <span id="today-label">JUEVES, 16 DE OCTUBRE DE 2026</span></div>
+                <h1>¡Hola, María! <span class="wave">✳</span></h1>
+                <p class="page-subtitle">Este es tu espacio para aprender y crecer. ¿Qué haremos hoy?</p>
+              </div>
+              <button class="button button-primary" data-open-message><span>＋</span> Escribir a un profesor</button>
+            </div>
+
+            <section class="hero-card" aria-label="Resumen académico">
+              <div class="hero-copy">
+                <span class="hero-kicker"><span class="sparkle">✦</span> TU PROGRESO, A TU RITMO</span>
+                <h2>Cada paso cuenta.<br><span>Vas por buen camino.</span></h2>
+                <p>Ya completaste el 68% de tu ciclo académico.<br>¡Sigue así, estás haciendo un gran trabajo!</p>
+                <a class="hero-link" href="#notas" data-view="notas">Ver mi progreso <span>→</span></a>
+              </div>
+              <div class="progress-visual" aria-label="68 por ciento completado">
+                <div class="progress-ring"><div class="ring-inner"><strong>68<span>%</span></strong><small>del ciclo</small></div></div>
+                <span class="orbit-dot orbit-dot-one"></span><span class="orbit-dot orbit-dot-two"></span>
+              </div>
+              <div class="hero-decoration decoration-one"></div><div class="hero-decoration decoration-two"></div>
+            </section>
+
+            <div class="section-heading overview-heading">
+              <div><h2>Tu resumen</h2><p>Un vistazo a tu actividad académica</p></div>
+              <span class="updated-note"><span class="live-dot"></span> Actualizado ahora</span>
+            </div>
+            <div class="stats-grid">
+              <article class="stat-card">
+                <div class="stat-top"><span class="stat-icon icon-courses">▦</span><span class="stat-trend">Este ciclo</span></div>
+                <div class="stat-value">04</div><div class="stat-label">Cursos matriculados</div>
+                <div class="stat-foot"><span class="tiny-bar"><i class="width-80"></i></span><span>4 de 5 disponibles</span></div>
+              </article>
+              <article class="stat-card">
+                <div class="stat-top"><span class="stat-icon icon-average">↗</span><span class="stat-trend trend-up">+0.8 pts</span></div>
+                <div class="stat-value">16.4<span class="stat-unit">/ 20</span></div><div class="stat-label">Promedio general</div>
+                <div class="stat-foot"><span class="trend-copy">↑ 5.1% <span>vs. ciclo anterior</span></span></div>
+              </article>
+              <article class="stat-card">
+                <div class="stat-top"><span class="stat-icon icon-tasks">◷</span><span class="stat-trend trend-warm">¡Esta semana!</span></div>
+                <div class="stat-value">03</div><div class="stat-label">Próximas evaluaciones</div>
+                <div class="stat-foot"><span class="deadline-dot"></span><span>Primera: mañana, 10:00 a. m.</span></div>
+              </article>
+            </div>
+
+            <div class="dashboard-columns">
+              <section class="content-card courses-card">
+                <div class="section-heading card-heading"><div><h2>Mis cursos</h2><p>Tus materias de este ciclo</p></div><a href="#cursos" class="text-link" data-view="cursos">Ver todos <span>→</span></a></div>
+                <div class="course-list" id="dashboard-courses"></div>
+              </section>
+              <section class="content-card schedule-card">
+                <div class="section-heading card-heading"><div><h2>Próximas fechas</h2><p>No pierdas de vista tus entregas</p></div><button class="subtle-icon" aria-label="Más opciones">···</button></div>
+                <div class="date-list">
+                  <article class="date-item"><div class="date-box date-tomorrow"><span>OCT</span><strong>17</strong></div><div class="date-copy"><span class="date-type type-exam">EVALUACIÓN</span><strong>Práctica calificada 3</strong><span>Cálculo diferencial · 10:00 a. m.</span></div><span class="date-more">···</span></article>
+                  <article class="date-item"><div class="date-box"><span>OCT</span><strong>20</strong></div><div class="date-copy"><span class="date-type type-delivery">ENTREGA</span><strong>Avance de proyecto</strong><span>Fundamentos de programación · 11:59 p. m.</span></div><span class="date-more">···</span></article>
+                  <article class="date-item"><div class="date-box"><span>OCT</span><strong>23</strong></div><div class="date-copy"><span class="date-type type-class">CLASE</span><strong>Laboratorio de investigación</strong><span>Metodología de investigación · 2:00 p. m.</span></div><span class="date-more">···</span></article>
+                </div>
+                <a href="#cursos" class="calendar-link" data-view="cursos"><span>▦</span> Ver calendario académico <span>→</span></a>
+              </section>
+            </div>
+            <footer class="page-footer"><span>© 2026 Aula Nova</span><span>Aprendiendo juntos, llegando más lejos <span class="footer-star">✦</span></span></footer>
+          </section>
+
+          <section class="view-panel hidden" id="view-cursos">
+            <div class="welcome-row inner-welcome"><div><div class="eyebrow"><span class="eyebrow-line"></span> CICLO ACADÉMICO 2026-II</div><h1>Mis cursos</h1><p class="page-subtitle">Todo lo que necesitas para avanzar este ciclo.</p></div></div>
+            <div class="course-grid" id="all-courses"></div>
+          </section>
+
+          <section class="view-panel hidden" id="view-notas">
+            <div class="welcome-row inner-welcome"><div><div class="eyebrow"><span class="eyebrow-line"></span> CICLO ACADÉMICO 2026-II</div><h1>Mis calificaciones</h1><p class="page-subtitle">Consulta tu avance y resultados por curso.</p></div></div>
+            <div class="grade-summary"><div><span>Promedio ponderado</span><strong>16.4 <small>/ 20</small></strong></div><div><span>Cursos aprobados</span><strong>4 <small>de 4</small></strong></div><div><span>Mejor calificación</span><strong>18.2 <small>Fund. de programación</small></strong></div></div>
+            <section class="content-card grade-card"><div class="section-heading card-heading"><div><h2>Detalle de calificaciones</h2><p>Notas registradas en el ciclo actual</p></div><span class="grade-scale">Escala vigesimal · Nota aprobatoria: 11</span></div><div class="table-wrap"><table><thead><tr><th>Curso</th><th>Docente</th><th>T1</th><th>T2</th><th>T3</th><th>Final</th><th>Estado</th></tr></thead><tbody id="grades-body"></tbody></table></div></section>
+          </section>
+
+          <section class="view-panel hidden" id="view-mensajes">
+            <div class="welcome-row inner-welcome"><div><div class="eyebrow"><span class="eyebrow-line"></span> COMUNICACIÓN</div><h1>Mensajes</h1><p class="page-subtitle">Mantente en contacto con tus profesores.</p></div><button class="button button-primary" data-open-message><span>＋</span> Nuevo mensaje</button></div>
+            <section class="content-card messages-card"><div class="section-heading card-heading"><div><h2>Mis mensajes</h2><p>Tus consultas enviadas recientemente</p></div></div><div id="messages-list" class="messages-list"></div></section>
+          </section>
+
+          <section class="view-panel hidden" id="view-perfil">
+            <div class="welcome-row inner-welcome"><div><div class="eyebrow"><span class="eyebrow-line"></span> TU ESPACIO</div><h1>Mi perfil</h1><p class="page-subtitle">Tu información personal y académica.</p></div></div>
+            <section class="content-card profile-card"><div class="profile-cover"></div><div class="profile-details"><div class="avatar avatar-profile">MG</div><div class="profile-heading"><h2 id="profile-name">María García López</h2><p>Estudiante de pregrado <span>·</span> Facultad de Ingeniería</p></div><div class="profile-info-grid"><div><span>Código universitario</span><strong id="profile-code">202310458</strong></div><div><span>Programa académico</span><strong>Ingeniería de Sistemas</strong></div><div><span>Correo institucional</span><strong id="profile-email">maria.garcia@universidad.edu</strong></div><div><span>Ciclo actual</span><strong>VI ciclo · 2026-II</strong></div></div></div></section>
+          </section>
+        </div>
+      </main>
+    </div>
+    <div class="sidebar-scrim" id="sidebar-scrim"></div>
+
+    <dialog class="message-dialog" id="message-dialog">
+      <form id="message-form" method="dialog" novalidate>
+        <div class="dialog-heading"><div><span class="dialog-kicker">AULA NOVA · MENSAJES</span><h2>Escribe a tu profesor</h2><p>Tu mensaje llegará directamente a su bandeja.</p></div><button type="button" class="dialog-close" id="close-dialog" aria-label="Cerrar">×</button></div>
+        <label for="message-course">Curso</label>
+        <select id="message-course" name="courseId" required><option value="">Selecciona un curso</option></select>
+        <label for="message-subject">Asunto</label>
+        <input id="message-subject" name="subject" maxlength="100" placeholder="¿Sobre qué deseas consultar?" required>
+        <label for="message-body">Mensaje</label>
+        <textarea id="message-body" name="body" maxlength="1000" rows="5" placeholder="Escribe tu consulta aquí..." required></textarea>
+        <div class="form-feedback" id="form-feedback" aria-live="polite"></div>
+        <div class="dialog-actions"><button type="button" class="button button-quiet" id="cancel-dialog">Cancelar</button><button type="submit" class="button button-primary" id="send-message">Enviar mensaje <span>→</span></button></div>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

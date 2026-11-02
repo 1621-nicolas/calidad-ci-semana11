@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testsuite name="API y aplicación web del aula virtual" time="0.067460" disabled="0" errors="0" tests="6" failures="0" skipped="0" hostname="0edea8a822bc">
+		<testcase name="entrega la página de inicio y cabeceras de seguridad" time="0.033905" classname="test"/>
+		<testcase name="expone el perfil y los cuatro cursos con calificaciones" time="0.006934" classname="test"/>
+		<testcase name="envía mensajes y los devuelve en la bandeja" time="0.008336" classname="test"/>
+		<testcase name="rechaza mensajes incompletos y cursos desconocidos" time="0.003831" classname="test"/>
+		<testcase name="rechaza JSON inválido y solicitudes demasiado grandes" time="0.003202" classname="test"/>
+		<testcase name="no expone archivos fuera de la aplicación" time="0.002345" classname="test"/>
+	</testsuite>
+	<!-- tests 7 -->
+	<!-- suites 0 -->
+	<!-- pass 7 -->
+	<!-- fail 0 -->
+	<!-- cancelled 0 -->
+	<!-- skipped 0 -->
+	<!-- todo 0 -->
+	<!-- duration_ms 143.710177 -->
+</testsuites>

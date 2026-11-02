@@ -1,0 +1,88 @@
+name: Calidad - Semana 11
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      smoke_only:
+        description: 'SOLO diagnóstico breve k6 (no cumple entrega final)'
+        type: boolean
+        required: false
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: calidad-ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      CI_PIPELINE: github-actions
+      CI_REPORT_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      TESTLINK_URL: ${{ vars.TESTLINK_URL }}
+      TESTLINK_DEVKEY: ${{ secrets.TESTLINK_DEVKEY }}
+      TESTLINK_PROJECT: ${{ vars.TESTLINK_PROJECT }}
+      TESTLINK_PLAN: ${{ vars.TESTLINK_PLAN }}
+      TESTLINK_AUTHOR_LOGIN: ${{ vars.TESTLINK_AUTHOR_LOGIN }}
+      REQUIRE_TESTLINK: ${{ secrets.TESTLINK_DEVKEY != '' && '1' || '0' }}
+    steps:
+      - name: 01 Checkout
+        uses: actions/checkout@v4
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 02 Build Docker
+        run: python ci/execute.py build
+      - name: 03 Environment
+        run: python ci/execute.py environment
+      - name: 04 Unit Tests
+        continue-on-error: true
+        run: python ci/execute.py unit
+      - name: 05 Selenium TC01-TC41
+        continue-on-error: true
+        run: python ci/execute.py selenium
+      - name: 06 Playwright TC01-TC41
+        continue-on-error: true
+        run: python ci/execute.py playwright
+      - name: 07 Functional
+        continue-on-error: true
+        run: python ci/execute.py functional
+      - name: 08 UAT
+        continue-on-error: true
+        run: python ci/execute.py uat
+      - name: 09 Performance dos apps R01-R10
+        continue-on-error: true
+        run: python ci/execute.py performance ${{ inputs.smoke_only && '--smoke' || '' }}
+      - name: 10 Stress dos apps E01-E10
+        continue-on-error: true
+        run: python ci/execute.py stress ${{ inputs.smoke_only && '--smoke' || '' }}
+      - name: 11 Security dos apps S01-S10
+        continue-on-error: true
+        run: python ci/execute.py security
+      - name: 12 TestLink
+        if: ${{ env.REQUIRE_TESTLINK == '1' }}
+        continue-on-error: true
+        run: python ci/execute.py testlink
+      - name: 13 Reports
+        if: always()
+        continue-on-error: true
+        run: python ci/execute.py reports
+      - name: Quality Gates
+        if: always()
+        run: python ci/execute.py quality
+      - name: Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-reports-${{ github.run_number }}
+          path: reports/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Cleanup
+        if: always()
+        run: python ci/execute.py cleanup
