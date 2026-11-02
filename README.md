@@ -66,7 +66,7 @@ git init
 git add .
 git commit -m "Semana 11: pipelines QA, Docker, TestLink"
 git branch -M main
-git remote add origin https://github.com/calidad-ci-semana11.git
+git remote add origin https://github.com/1621-nicolas/calidad-ci-semana11.git
 git push -u origin main
 ```
 
